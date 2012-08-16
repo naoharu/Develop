@@ -1,24 +1,24 @@
 #!/bin/bash
 #
 # letterbox.sh
-# ˆê”Ê“I‚ÈƒfƒWƒ^ƒ‹ƒJƒƒ‰‚ÌƒAƒXƒyƒNƒg”äi3:2j‚Ì‰æ‘œ‚ğAƒŒƒ^[ƒ{ƒbƒNƒX‚Å³•ûŒ`‚É‚·‚éB
+# ä¸€èˆ¬çš„ãªãƒ‡ã‚¸ã‚¿ãƒ«ã‚«ãƒ¡ãƒ©ã®ã‚¢ã‚¹ãƒšã‚¯ãƒˆæ¯”ï¼ˆ3:2ï¼‰ã®ç”»åƒã‚’ã€ãƒ¬ã‚¿ãƒ¼ãƒœãƒƒã‚¯ã‚¹ã§æ­£æ–¹å½¢ã«ã™ã‚‹ã€‚
 #
-# g‚¢•û
-# ~$ ./letterbox.sh “ü—Í‰æ‘œƒtƒ@ƒCƒ‹
+# ä½¿ã„æ–¹
+# ~$ ./letterbox.sh å…¥åŠ›ç”»åƒãƒ•ã‚¡ã‚¤ãƒ«
 #
  
- # “ü—Í‰æ‘œ‚Æ“¯‚¶‰¡•A1/4‚Ìc•‚ÌA•‚¢‘Ñ‰æ‘œ‚Ì¶¬
- width=`identify -format %w $1`
- tmp_h=` identify -format %h $1`
- height=`expr ${tmp_h} / 4`
- convert -size ${width}x${height} xc:black black_line.jpg
-  
-  # ‰æ‘œ‚Ì‰º•Ó‚É•‚¢‘Ñ‚ğ‚Â‚¯‚é
-  convert -quality 100 $1 black_line.jpg -append temp.jpg
-   
-   # ‰æ‘œ‚Ìã•Ó‚É•‚¢‘Ñ‚ğ‚Â‚¯‚ÄA“ü—Íƒtƒ@ƒCƒ‹–¼‚Ìæ“ª‚É"LB_"‚ğ‚Â‚¯‚Äo—Í‚·‚é
-   convert -quality 100 black_line.jpg  temp.jpg -append  "LB_${1}"
-    
-    # ˆêƒtƒ@ƒCƒ‹‚ğíœ
-    rm black_line.jpg
-    rm temp.jpg
+# å…¥åŠ›ç”»åƒã¨åŒã˜æ¨ªå¹…ã€1/4ã®ç¸¦å¹…ã®ã€é»’ã„å¸¯ç”»åƒã®ç”Ÿæˆ
+width=`identify -format %w $1`
+tmp_h=` identify -format %h $1`
+height=`expr ${tmp_h} / 4`
+convert -size ${width}x${height} xc:black black_line.jpg
+ 
+# ç”»åƒã®ä¸‹è¾ºã«é»’ã„å¸¯ã‚’ã¤ã‘ã‚‹
+convert -quality 100 $1 black_line.jpg -append temp.jpg
+ 
+# ç”»åƒã®ä¸Šè¾ºã«é»’ã„å¸¯ã‚’ã¤ã‘ã¦ã€å…¥åŠ›ãƒ•ã‚¡ã‚¤ãƒ«åã®å…ˆé ­ã«"LB_"ã‚’ã¤ã‘ã¦å‡ºåŠ›ã™ã‚‹
+convert -quality 100 black_line.jpg  temp.jpg -append  "LB_${1}"
+ 
+# ä¸€æ™‚ãƒ•ã‚¡ã‚¤ãƒ«ã‚’å‰Šé™¤
+rm black_line.jpg
+rm temp.jpg

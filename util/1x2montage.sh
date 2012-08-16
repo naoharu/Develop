@@ -1,19 +1,19 @@
 #!/bin/bash
 #
-# 2–‡‚Ì‰æ‘œ‚ğã‰º‚É•À‚×‚Ä˜AŒ‹
+# 2æšã®ç”»åƒã‚’ä¸Šä¸‹ã«ä¸¦ã¹ã¦é€£çµ
 #
-# ~$ ./1x2montage.sh ‰æ‘œ1 ‰æ‘œ2 
+# ~$ ./1x2montage.sh ç”»åƒ1 ç”»åƒ2 
 #
-# o—Íƒtƒ@ƒCƒ‹‚Ì\¬iƒtƒ@ƒCƒ‹–¼Fout.jpgj
+# å‡ºåŠ›ãƒ•ã‚¡ã‚¤ãƒ«ã®æ§‹æˆï¼ˆãƒ•ã‚¡ã‚¤ãƒ«åï¼šout.jpgï¼‰
 #
-# ‰æ‘œ1
-# ‰æ‘œ2
+# ç”»åƒ1
+# ç”»åƒ2
  
- # ‰æ‘œ1‚Ì‰º•Ó‚É”’ü‚ğ•t‚¯‚é
- tmp_height=`identify -format %h $1`
- width=`identify -format %w $1`
- height=`expr ${tmp_height} / 200`
- convert -quality 100 $1 -size ${width}x${height} xc:white -append temp1.jpg
-  
-  #‰æ‘œ1‚Æ‰æ‘œ2‚ğc‚É˜AŒ‹
-  convert -append temp1.jpg $2 out.jpg
+# ç”»åƒ1ã®ä¸‹è¾ºã«ç™½ç·šã‚’ä»˜ã‘ã‚‹
+tmp_height=`identify -format %h $1`
+width=`identify -format %w $1`
+height=`expr ${tmp_height} / 200`
+convert -quality 100 $1 -size ${width}x${height} xc:white -append temp1.jpg
+ 
+#ç”»åƒ1ã¨ç”»åƒ2ã‚’ç¸¦ã«é€£çµ
+convert -append temp1.jpg $2 out.jpg
